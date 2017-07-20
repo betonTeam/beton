@@ -7,9 +7,9 @@ function get(args)
 
   --for i,v in ipairs(args) do
 
-    local link = "https://raw.githubusercontent.com/" .. args
+    local link = "https://raw.githubusercontent.com/" .. args .. "/"
 
-    local index = http.get(link .. "/index")
+    local index = http.get(link .. "index")
 
     local location = index.readLine()
 
