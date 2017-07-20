@@ -2,12 +2,10 @@
 1
 ]]--
 
-function get(args)
+function get(repo)
   --args should contain "GitHub Username/GitHub Repository Name/Repository Branch"
 
-  --for i,v in ipairs(args) do
-
-    local link = "https://raw.githubusercontent.com/" .. args .. "/"
+    local link = "https://raw.githubusercontent.com/" .. repo .. "/"
 
     local index = http.get(link .. "index")
 
@@ -28,7 +26,5 @@ function get(args)
       h.close()
 
     end
-
-  --end
 
 end
