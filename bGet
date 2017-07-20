@@ -1,0 +1,34 @@
+--[[
+1
+]]--
+
+function get(args)
+  --args should contain "GitHub Username/GitHub Repository Name/Repository Branch"
+
+  for i,v in ipairs(args) do
+
+    local link = "https://raw.githubusercontent.com/" .. v
+
+    local index = http.get(link .. "/index.dl")
+
+    local location = index.readLine()
+
+    while true do
+
+      local name = index.readLine()
+
+      if not name then
+        return
+      end
+
+      local data = http.get(link .. name)
+
+      h = fs.open(location .. name, "w")
+      h.writeLine(data.readAll())
+      h.close()
+
+    end
+
+  end
+
+end
