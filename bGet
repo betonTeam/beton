@@ -1,13 +1,13 @@
---[[
-1
-]]--
+function parse(info)
+
+end
 
 function get(repo)
-  --args should contain "GitHub Username/GitHub Repository Name/Repository Branch"
+  --args should contain "GitHub Username/GitHub Repository Name/Repository Branch/can name.can"
 
-    local link = "https://raw.githubusercontent.com/" .. repo .. "/"
+    local link = "https://raw.githubusercontent.com/" .. repo
 
-    local index = http.get(link .. "index")
+    local info = http.get(link .. "/info")
 
     local location = index.readLine()
 
