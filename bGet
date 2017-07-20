@@ -5,7 +5,7 @@
 function get(args)
   --args should contain "GitHub Username/GitHub Repository Name/Repository Branch"
 
-  for i,v in ipairs(args) do
+  --for i,v in ipairs(args) do
 
     local link = "https://raw.githubusercontent.com/" .. v
 
@@ -29,6 +29,6 @@ function get(args)
 
     end
 
-  end
+  --end
 
 end
