@@ -9,7 +9,7 @@ function get(args)
 
     local link = "https://raw.githubusercontent.com/" .. args
 
-    local index = http.get(link .. "/index.dl")
+    local index = http.get(link .. "/index")
 
     local location = index.readLine()
 
